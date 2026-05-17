@@ -24,12 +24,29 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-DEBUG"
+            isDebuggable = true
             isMinifyEnabled = false
+            isShrinkResources = false
+
+            resValue("string", "app_name", "PetCare Debug")
+            buildConfigField("String", "BUILD_ENV", "\"DEBUG\"")
+            buildConfigField("boolean", "ENABLE_LOGGING", "true")
+        }
+        release {
+            isDebuggable = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            resValue("string", "app_name", "PetCareTracker")
+            buildConfigField("String", "BUILD_ENV", "\"RELEASE\"")
+            buildConfigField("boolean", "ENABLE_LOGGING", "false")
         }
     }
     compileOptions {
@@ -41,6 +58,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 

@@ -62,7 +62,7 @@ import com.ksp.petcaretracker.ui.theme.SuccessGreen
 import com.ksp.petcaretracker.ui.theme.WarningOrange
 import com.ksp.petcaretracker.utils.DateUtils
 
-private const val FREE_PET_LIMIT = 3
+private const val FREE_PET_LIMIT = 1
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -12,10 +12,21 @@
 #   public *;
 #}
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Preserve line number information for debugging release stack traces.
+-keepattributes SourceFile,LineNumberTable
+-renamesourcefileattribute SourceFile
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Hilt-generated components are reflectively instantiated.
+-keep class dagger.hilt.** { *; }
+-keep class * extends dagger.hilt.android.internal.managers.ViewComponentManager$FragmentContextWrapper { *; }
+
+# Room entities/DAOs accessed via generated implementations.
+-keep class androidx.room.** { *; }
+-keep @androidx.room.Entity class * { *; }
+
+# Keep kotlinx.serialization metadata.
+-keepattributes *Annotation*, InnerClasses
+-keepclassmembers class **$$serializer { *; }
+-keepclasseswithmembers class * {
+    kotlinx.serialization.KSerializer serializer(...);
+}

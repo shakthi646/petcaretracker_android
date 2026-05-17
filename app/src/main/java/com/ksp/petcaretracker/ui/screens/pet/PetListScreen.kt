@@ -48,7 +48,7 @@ import com.ksp.petcaretracker.ui.components.PetCareFab
 import com.ksp.petcaretracker.ui.components.PetCareTopBar
 import com.ksp.petcaretracker.utils.DateUtils
 
-private const val FREE_PET_LIMIT = 3
+private const val FREE_PET_LIMIT = 1
 
 @Composable
 fun PetListScreen(

@@ -21,6 +21,30 @@ android {
         versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Generate vectors at build time rather than bundling raster PNGs.
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    androidResources {
+        // Ship only English resources; drops translated strings pulled in
+        // by transitive libraries (AppCompat, Compose, Material, etc.).
+        localeFilters += listOf("en")
+    }
+
+    // Don't bundle JVM-only metadata that's useless on Android.
+    packaging {
+        resources {
+            excludes += setOf(
+                "META-INF/AL2.0",
+                "META-INF/LGPL2.1",
+                "META-INF/LICENSE*",
+                "META-INF/NOTICE*",
+                "META-INF/*.kotlin_module",
+                "kotlin/**",
+                "DebugProbesKt.bin"
+            )
+        }
     }
 
     buildTypes {

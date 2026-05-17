@@ -1,0 +1,54 @@
+# Built application files
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Java
+*.class
+
+# Generated build output
+bin/
+gen/
+out/
+release/
+build/
+
+# Gradle
+.gradle/
+.gradletasknamecache
+
+# Local configuration (machine-specific SDK path, signing creds, etc.)
+local.properties
+*.keystore
+*.jks
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+captures/
+.navigation/
+.externalNativeBuild/
+.cxx/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Claude Code worktree scratch
+.claude/
+
+# Lint
+lint/intermediates/
+lint/generated/
+lint/outputs/
+lint/tmp/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
